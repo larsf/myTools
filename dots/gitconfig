@@ -3,5 +3,5 @@
 	smudge = git-lfs smudge %f
 	required = true
 [user]
-	name = larsf
+	name = Lars Fredriksen
 	email = lfredriksen@maprtech.com

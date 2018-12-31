@@ -15,7 +15,7 @@ SSH_AGENT_PID=`ps -elfwu $ME | fgrep ssh-agent | fgrep -v grep |awk '{print $4}'
 if [ -z "$SSH_AGENT_PID" ]; then
     eval $(ssh-agent -s) > /dev/null
 else
-    SSH_AUTH_SOCK=`lsof -p $SSH_AGENT_PID | grep '/tmp/ssh-'| awk '{print $9}'`
+    SSH_AUTH_SOCK=`lsof -p $SSH_AGENT_PID | grep '/tmp/ssh-'| head -1 | awk '{print $9}'`
 fi
 export SSH_AUTH_SOCK
 export SSH_AGENT_PID
